@@ -2,12 +2,14 @@
 
 namespace Src;
 
+use InvalidArgumentException;
+
 class Fibonacci
 {
     public function calculate($index)
     {
         if (!is_int($index) || $index < 0) {
-            throw new \InvalidArgumentException('You must pass a non-negative integer');
+            throw new InvalidArgumentException('You must pass a non-negative integer');
         }
 
         if ($index == 0) {
